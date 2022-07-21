@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "dinhlehoangdemo-terraform-state"
+    bucket = "datnt-terraform-state"
     key    = "services/terraform.tfstate"
     region = "ap-southeast-1"
     dynamodb_table = "datnt-locks"
@@ -34,7 +34,7 @@ data "terraform_remote_state" "networking" {
   backend = "s3"
 
   config = {
-    bucket = "dinhlehoangdemo-terraform-state"
+    bucket = "datnt-terraform-state"
     key    = "vpc/terraform.tfstate"
     region = "ap-southeast-1"
   }
